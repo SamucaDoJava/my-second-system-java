@@ -1,10 +1,14 @@
 package com.mjv.curso.service;
 
+import com.mjv.curso.builder.CarroBuilder;
+import com.mjv.curso.dto.CarroDTO;
 import com.mjv.curso.model.Carro;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CarroService {
 
-    public void carroFabricadoNovo(){
+    public CarroDTO carroFabricadoNovo(){
         // Criando uma instância (objeto) da classe Carro.
         Carro meuCarro = new Carro("Toyota", "Corolla", 2022, 80000.0, Boolean.TRUE);
 
@@ -19,6 +23,10 @@ public class CarroService {
               // Exibindo as informações atualizadas do carro.
         System.out.println("\nDetalhes Atualizados do Carro:");
         System.out.println(meuCarro.obterDescricao());
+
+        CarroBuilder carroBuilder = new CarroBuilder();
+
+        return carroBuilder.toDTO(meuCarro);
     }
 
     public void carroDepoisDeAuditado(){

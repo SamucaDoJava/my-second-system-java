@@ -1,7 +1,9 @@
-package com.mjv.curso.model;
+package com.mjv.curso.dto;
 
-//@Table
-public class Carro {
+
+import com.mjv.curso.model.User;
+
+public class CarroDTO {
 
     Integer id;
 
@@ -13,20 +15,22 @@ public class Carro {
 
     private Boolean novoCadastro;
 
+    public CarroDTO(){
+
+    }
 
 
-    
     private User user;
 
     // Construtor para inicializar um objeto Carro com valores específicos.
-    public Carro(String marca, String modelo, int ano, double preco) {
+    public CarroDTO(String marca, String modelo, int ano, double preco) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.preco = preco;
     }
 
-    public Carro(String marca, String modelo, int ano, double preco, Boolean novoCadastro) {
+    public CarroDTO(String marca, String modelo, int ano, double preco, Boolean novoCadastro) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
@@ -89,7 +93,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" +
+        return "CarroDTO{" +
                 "id=" + id +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
